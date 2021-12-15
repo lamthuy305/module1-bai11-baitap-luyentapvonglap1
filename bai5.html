@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Dãy Fibonacci</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<Script>-->
+<!--    let tinhTong = 1;-->
+<!--    let number1 = 0;-->
+<!--    let number2 = 1;-->
+<!--    let total = 0;-->
+<!--    for (let dem = 2; dem <= 19; dem++) {-->
+<!--        total = number1 + number2;-->
+<!--        tinhTong += total;-->
+<!--        number1 = number2;-->
+<!--        number2 = total;-->
+<!--    }-->
+<!--    document.write("Tổng 20 sô đầu tiên trong dãy Fibonacci là: " + tinhTong)-->
+<!--</Script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+<Script>
+    let text = "0+1";
+    let number1 = 0;
+    let number2 = 1;
+    let total = 0;
+    for (let dem = 2; dem <= 19; dem++) {
+        total = number1 + number2;
+        text = text + "+" + total;
+        number1 = number2;
+        number2 = total;
+    }
+
+    document.write(eval(text));
+</Script>
+</body>
+</html>

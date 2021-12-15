@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<h1>Game đoán số</h1>
+<br>
+<p>Nhập đoạn số mà bạn muốn đoán</p>
+<input type="number" id="batDau" placeholder="Nhập số bắt đầu" style="width: 115px">
+<input type="number" id="ketThuc" placeholder="Nhập số kết thúc" style="width: 115px">
+<button onclick="chonSo()">Chọn dãy số</button>
+<br>
+<p>Nhập số bạn muốn đoán . Bạn có 3 lần đoán</p>
+<input type="number" id="number" placeholder="Nhập số muốn đoán">
+
+<button onclick="play()">Đoán!</button>
+<div></div>
+<button type="reset">Chơi lại</button>
+<script>
+    let dem =1;
+    let numberRandom;
+    function chonSo() {
+        let batDau = parseInt(document.getElementById("batDau").value);
+        let ketThuc = parseInt(document.getElementById("ketThuc").value);
+        let khoangChay = ketThuc - batDau + 1;
+        let number = Math.floor(Math.random() * khoangChay) + batDau;
+        numberRandom = number;
+    }
+
+    function play() {
+        let numberDoan = parseInt(document.getElementById("number").value);
+        if (dem > 3) {
+            alert("Đoán sai 3 lần, lượn");
+        } else {
+            if (numberRandom === numberDoan) {
+                alert("Đoán đúng");
+            } else {
+                alert("Đoán sai");
+                dem++
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

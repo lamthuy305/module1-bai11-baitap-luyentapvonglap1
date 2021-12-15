@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng 30 số chia hết cho 7 đầu tiên</title>
+</head>
+<body>
+<script>
+    let dem = 0;
+    let number = 1;
+    let text = "0"
+
+    for (number; dem <= 30; number++) {
+        if (number % 7 === 0) {
+            text += "+" + number;
+            dem++;
+        }
+    }
+    document.write(eval(text));
+
+</script>
+</body>
+</html>

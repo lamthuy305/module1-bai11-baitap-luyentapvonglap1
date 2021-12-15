@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let text = "";
+    for (let number = 1; number <= 100; number++) {
+        if (number % 3 === 0 && number % 5 === 0) {
+            text += "FizzBuzz <br>" ;
+        } else if (number % 5 === 0) {
+            text += "Buzz <br>";
+        } else if (number % 3 === 0 ) {
+            text += "Fizz <br>";
+        }
+    }
+    document.write(text);
+
+</script>
+</body>
+</html>
