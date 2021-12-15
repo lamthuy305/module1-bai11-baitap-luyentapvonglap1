@@ -10,14 +10,14 @@
 <p>Nhập đoạn số mà bạn muốn đoán</p>
 <input type="number" id="batDau" placeholder="Nhập số bắt đầu" style="width: 115px">
 <input type="number" id="ketThuc" placeholder="Nhập số kết thúc" style="width: 115px">
-<button onclick="chonSo()">Chọn dãy số</button>
+<button onclick="chonSo()">Máy chọn random</button>
 <br>
 <p>Nhập số bạn muốn đoán . Bạn có 3 lần đoán</p>
 <input type="number" id="number" placeholder="Nhập số muốn đoán">
 
 <button onclick="play()">Đoán!</button>
 <div></div>
-<button type="reset">Chơi lại</button>
+<button onclick="resetGame()">Chơi lại</button>
 <script>
     let dem =1;
     let numberRandom;
@@ -27,6 +27,7 @@
         let khoangChay = ketThuc - batDau + 1;
         let number = Math.floor(Math.random() * khoangChay) + batDau;
         numberRandom = number;
+        // alert(number)
     }
 
     function play() {
@@ -36,12 +37,22 @@
         } else {
             if (numberRandom === numberDoan) {
                 alert("Đoán đúng");
+
+            } else if(numberDoan < numberRandom) {
+                alert("Đoán tăng lên đi");
+                dem ++;
             } else {
-                alert("Đoán sai");
-                dem++
+                alert("Đoán giảm xuống đi");
+                dem ++;
             }
         }
     }
+function resetGame() {
+    dem = 1;
+    document.getElementById("batDau").value = "";
+    document.getElementById("ketThuc").value = "";
+    document.getElementById("number").value = "";
+}
 
 </script>
 </body>
